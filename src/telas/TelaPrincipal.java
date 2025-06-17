@@ -29,7 +29,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         fundoTela = new javax.swing.JDesktopPane();
-        button1 = new java.awt.Button();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCadastros = new javax.swing.JMenu();
         menuMateriais = new javax.swing.JMenu();
@@ -62,25 +61,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        button1.setLabel("button1");
-
-        fundoTela.setLayer(button1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout fundoTelaLayout = new javax.swing.GroupLayout(fundoTela);
         fundoTela.setLayout(fundoTelaLayout);
         fundoTelaLayout.setHorizontalGroup(
             fundoTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fundoTelaLayout.createSequentialGroup()
-                .addContainerGap(470, Short.MAX_VALUE)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(455, 455, 455))
+            .addGap(0, 982, Short.MAX_VALUE)
         );
         fundoTelaLayout.setVerticalGroup(
             fundoTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fundoTelaLayout.createSequentialGroup()
-                .addContainerGap(283, Short.MAX_VALUE)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(241, 241, 241))
+            .addGap(0, 548, Short.MAX_VALUE)
         );
 
         menuCadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cadastro.png"))); // NOI18N
@@ -150,7 +139,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menuReservas);
 
-        jMenu1.setText("jMenu1");
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Login_37128.png"))); // NOI18N
+        jMenu1.setText("Sair");
+        jMenu1.setAutoscrolls(true);
+        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -221,7 +213,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button1;
     private javax.swing.JDesktopPane fundoTela;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
