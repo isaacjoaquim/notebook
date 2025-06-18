@@ -31,12 +31,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         fundoTela = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCadastros = new javax.swing.JMenu();
-        menuMateriais = new javax.swing.JMenu();
-        menuCadastroMat = new javax.swing.JMenuItem();
-        menuConsultMat = new javax.swing.JMenuItem();
         menuPessoas = new javax.swing.JMenu();
         menuCadPessoas = new javax.swing.JMenuItem();
         menuConsultPessoas = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         menuReservas = new javax.swing.JMenu();
         menuFazerReserva = new javax.swing.JMenuItem();
         menuConsultReserva = new javax.swing.JMenuItem();
@@ -76,31 +74,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuCadastros.setText("Cadastros   |");
         menuCadastros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        menuMateriais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/business_inventory_maintenance_product_box_boxes_2326 (1).png"))); // NOI18N
-        menuMateriais.setText("Materiais");
-
-        menuCadastroMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/businesspackage_additionalpackage_box_add_insert_negoci_2335.png"))); // NOI18N
-        menuCadastroMat.setText("Cadastrar");
-        menuCadastroMat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuCadastroMat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuCadastroMatActionPerformed(evt);
-            }
-        });
-        menuMateriais.add(menuCadastroMat);
-
-        menuConsultMat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/search_locate_find_6278.png"))); // NOI18N
-        menuConsultMat.setText("Consultar");
-        menuConsultMat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuMateriais.add(menuConsultMat);
-
-        menuCadastros.add(menuMateriais);
-
         menuPessoas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bootloader_users_person_people_6080.png"))); // NOI18N
         menuPessoas.setText("funcionarios / alunos");
 
-        menuCadPessoas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/business_application_addmale_useradd_insert_add_user_client_2312.png"))); // NOI18N
-        menuCadPessoas.setText("Cadastrar");
+        menuCadPessoas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/customer_person_people_man_user_client_1629.png"))); // NOI18N
+        menuCadPessoas.setText("Funcionarios");
         menuCadPessoas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuCadPessoas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,11 +88,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuPessoas.add(menuCadPessoas);
 
         menuConsultPessoas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/business_man_usersearch_thesearch_theclient_2356.png"))); // NOI18N
-        menuConsultPessoas.setText("Consultar");
+        menuConsultPessoas.setText("Aluno");
         menuConsultPessoas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuConsultPessoas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuConsultPessoasActionPerformed(evt);
+            }
+        });
         menuPessoas.add(menuConsultPessoas);
 
         menuCadastros.add(menuPessoas);
+
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/business_inventory_maintenance_product_box_boxes_2326 (1).png"))); // NOI18N
+        jMenuItem1.setText("Materiais");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuCadastros.add(jMenuItem1);
 
         jMenuBar1.add(menuCadastros);
 
@@ -143,6 +135,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Sair");
         jMenu1.setAutoscrolls(true);
         jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -165,17 +162,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseClicked
 
-    private void menuCadastroMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastroMatActionPerformed
-        cadObjeto cadO = new cadObjeto();
-        fundoTela.add(cadO);
-        cadO.setVisible(true);
-    }//GEN-LAST:event_menuCadastroMatActionPerformed
-
     private void menuCadPessoasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadPessoasActionPerformed
         CadHumano cadH = new CadHumano();
         fundoTela.add(cadH);
         cadH.setVisible(true);
     }//GEN-LAST:event_menuCadPessoasActionPerformed
+
+    private void menuConsultPessoasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConsultPessoasActionPerformed
+        CadAluno cadA = new CadAluno();
+        fundoTela.add(cadA);
+        cadA.setVisible(true);
+    }//GEN-LAST:event_menuConsultPessoasActionPerformed
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        cadObjeto cadO = new cadObjeto();
+        fundoTela.add(cadO);
+        cadO.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,16 +223,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane fundoTela;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem menuCadPessoas;
-    private javax.swing.JMenuItem menuCadastroMat;
     private javax.swing.JMenu menuCadastros;
-    private javax.swing.JMenuItem menuConsultMat;
     private javax.swing.JMenuItem menuConsultPessoas;
     private javax.swing.JMenuItem menuConsultReserva;
     private javax.swing.JMenuItem menuFazerReserva;
     private javax.swing.JMenuItem menuFimReserva;
-    private javax.swing.JMenu menuMateriais;
     private javax.swing.JMenu menuPessoas;
     private javax.swing.JMenu menuReservas;
     // End of variables declaration//GEN-END:variables
