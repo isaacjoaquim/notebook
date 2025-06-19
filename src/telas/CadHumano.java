@@ -37,7 +37,7 @@ public class CadHumano extends javax.swing.JInternalFrame {
         jLabel19 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        BuscarBTN = new javax.swing.JButton();
         BTNlimpar = new javax.swing.JButton();
         jFundoBT = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -112,8 +112,13 @@ public class CadHumano extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar.png"))); // NOI18N
-        jButton1.setText("Buscar");
+        BuscarBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar.png"))); // NOI18N
+        BuscarBTN.setText("Buscar");
+        BuscarBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarBTNActionPerformed(evt);
+            }
+        });
 
         BTNlimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_limpar.png"))); // NOI18N
         BTNlimpar.setText("Limpar busca");
@@ -170,7 +175,7 @@ public class CadHumano extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(BuscarBTN)
                 .addGap(18, 18, 18)
                 .addComponent(BTNlimpar)
                 .addContainerGap(35, Short.MAX_VALUE))
@@ -187,7 +192,7 @@ public class CadHumano extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
-                    .addComponent(jButton1)
+                    .addComponent(BuscarBTN)
                     .addComponent(BTNlimpar))
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -472,16 +477,24 @@ public class CadHumano extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void BTNlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNlimparActionPerformed
-        // TODO add your handling code here:
+        BTNlimpar.setVisible(false);
+        BuscarBTN.setVisible(true);
+        jFundoBT.setVisible(false);
     }//GEN-LAST:event_BTNlimparActionPerformed
+
+    private void BuscarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBTNActionPerformed
+        BTNlimpar.setVisible(true);
+        BuscarBTN.setVisible(false);
+        jFundoBT.setVisible(true);
+    }//GEN-LAST:event_BuscarBTNActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTNlimpar;
+    private javax.swing.JButton BuscarBTN;
     private javax.swing.JButton btnAtualizar;
     private javax.swing.JButton btnCancelarEdicao;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;

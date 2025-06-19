@@ -137,6 +137,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuFimReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/3592863-accounting-calculate-calculation-calculator-general-math-office_107744.png"))); // NOI18N
         menuFimReserva.setText("Finalizar reserva");
         menuFimReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuFimReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuFimReservaActionPerformed(evt);
+            }
+        });
         menuReservas.add(menuFimReserva);
 
         jMenuBar1.add(menuReservas);
@@ -205,6 +210,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         fundoTela.add(fazerReserva);
         fazerReserva.setVisible(true);
     }//GEN-LAST:event_menuFazerReservaActionPerformed
+
+    private void menuFimReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFimReservaActionPerformed
+        TelaFimReserva  fimReserva = new TelaFimReserva();
+        fundoTela.add(fimReserva);
+        fimReserva.setVisible(true);
+    }//GEN-LAST:event_menuFimReservaActionPerformed
 
     /**
      * @param args the command line arguments

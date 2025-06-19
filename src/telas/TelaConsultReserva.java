@@ -33,6 +33,8 @@ public class TelaConsultReserva extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        setClosable(true);
+
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Consulta reservas"));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
