@@ -117,11 +117,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuFazerReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/3592829-calendar-general-month-month-calendar-office-schedule-wall-calendar_107756.png"))); // NOI18N
         menuFazerReserva.setText("Fazer reserva");
         menuFazerReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuFazerReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuFazerReservaActionPerformed(evt);
+            }
+        });
         menuReservas.add(menuFazerReserva);
 
         menuConsultReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/3592851-calendar-general-month-month-calendar-office-schedule-wall-calendar_107740.png"))); // NOI18N
         menuConsultReserva.setText("Consultar reserva");
         menuConsultReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menuConsultReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuConsultReservaActionPerformed(evt);
+            }
+        });
         menuReservas.add(menuConsultReserva);
 
         menuFimReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/3592863-accounting-calculate-calculation-calculator-general-math-office_107744.png"))); // NOI18N
@@ -183,6 +193,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         fundoTela.add(cadO);
         cadO.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void menuConsultReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConsultReservaActionPerformed
+        TelaConsultReserva consultReserva = new TelaConsultReserva();
+        fundoTela.add(consultReserva);
+        consultReserva.setVisible(true);
+    }//GEN-LAST:event_menuConsultReservaActionPerformed
+
+    private void menuFazerReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFazerReservaActionPerformed
+        TelaFazerReserva fazerReserva = new TelaFazerReserva();
+        fundoTela.add(fazerReserva);
+        fazerReserva.setVisible(true);
+    }//GEN-LAST:event_menuFazerReservaActionPerformed
 
     /**
      * @param args the command line arguments
