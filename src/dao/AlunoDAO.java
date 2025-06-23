@@ -45,19 +45,20 @@ public class AlunoDAO {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                Aluno a = new Aluno(a.getNomeAlu(), a.getSobrenomeAlu(), a.getCpfAlu(), a.getRgAlu(), a.getSexoAlu(), a.getDataNascAlu(), a.getEmailAlu(), a.getTelefone1Alu(), a.getTelefone2Alu(), a.getMatricula());
+                Aluno a;
+                a = new Aluno(
+                        rs.getString("matricula"),
+                        rs.getString("nome"),
+                        rs.getString("sobrenome"),
+                        rs.getString("cpf"),
+                        rs.getString("rg"),
+                        rs.getString("sexo"),
+                        rs.getString("data_nascimento"),
+                        rs.getString("email"),
+                        rs.getString("telefone1"),
+                        rs.getString("telefone2")
+                );
                 a.setIdAlu(rs.getInt("id"));
-                a.setMatricula(rs.getString("matricula"));
-                a.setNomeAlu(rs.getString("nome"));
-                a.setSobrenomeAlu(rs.getString("sobrenome"));
-                a.setCpfAlu(rs.getString("cpf"));
-                a.setRgAlu(rs.getString("rg"));
-                a.setSexoAlu(rs.getString("sexo"));
-                a.setDataNascAlu(rs.getString("data_nascimento"));
-                a.setEmailAlu(rs.getString("email"));
-                a.setTelefone1Alu(rs.getString("telefone1"));
-                a.setTelefone2Alu(rs.getString("telefone2"));
-
                 alunos.add(a);
             }
 
