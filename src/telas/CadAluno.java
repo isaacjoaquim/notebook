@@ -4,6 +4,7 @@
  */
 package telas;
 
+import controller.AlunoControl;
 import dao.AlunoDAO;
 import java.time.LocalDate;
 import model.Aluno;
@@ -61,7 +62,7 @@ public class CadAluno extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        campoMatricula = new javax.swing.JFormattedTextField();
+        cargoCombo = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         campoTelefone1 = new javax.swing.JFormattedTextField();
@@ -176,7 +177,7 @@ public class CadAluno extends javax.swing.JInternalFrame {
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 3, Short.MAX_VALUE))
+                        .addGap(0, 7, Short.MAX_VALUE))
                     .addComponent(jFundoBT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -234,18 +235,9 @@ public class CadAluno extends javax.swing.JInternalFrame {
         jLabel13.setForeground(new java.awt.Color(255, 51, 51));
         jLabel13.setText("(*) são campos obrigatórios para preenchimento:");
 
-        try {
-            campoMatricula.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#########")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        campoMatricula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoMatriculaActionPerformed(evt);
-            }
-        });
+        cargoCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione;", "Aluno", "Funcionario", "Item 4" }));
 
-        jLabel8.setText("*Matricula");
+        jLabel8.setText("Cargo:");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -256,33 +248,31 @@ public class CadAluno extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(26, 26, 26)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(campoCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                                .addComponent(campoNome)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel5))
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel3)
-                                .addComponent(campoSobrenome)
-                                .addComponent(campoRg, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(campoData, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                                .addComponent(jLabel4)
-                                .addComponent(campoMatricula))
-                            .addComponent(jLabel8))
-                        .addGap(20, 20, 20))
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(campoCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                        .addComponent(campoNome)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jLabel5))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel3)
+                        .addComponent(campoSobrenome)
+                        .addComponent(campoRg, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
+                    .addComponent(jLabel6))
+                .addGap(38, 38, 38)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campoData, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(sexoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(cargoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(243, 243, 243)
                 .addComponent(jLabel13)
@@ -311,16 +301,14 @@ public class CadAluno extends javax.swing.JInternalFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
+                            .addComponent(jLabel7)
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(campoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sexoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(sexoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cargoCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -473,20 +461,19 @@ public class CadAluno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCancelarEdicaoActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-    String matricula = campoMatricula.getText();
     String nomeAlu = campoNome.getText();
     String sobrenomeAlu = campoSobrenome.getText();
     String dataNascAlu = campoData.getText();
     String cpfAlu = campoCpf.getText();
     String rgAlu = campoRg.getText();
     String sexoAlu = (String)sexoCombo.getSelectedItem();
+    String cargo = (String)cargoCombo.getSelectedItem();
     String emailAlu = campoEmail.getText();
     String telefone1Alu = campoTelefone1.getText();
     String telefone2Alu = campoTelefone2.getText();
     
-    Aluno aluno = new Aluno(nomeAlu, sobrenomeAlu, dataNascAlu, cpfAlu, rgAlu, sexoAlu, emailAlu, telefone1Alu, telefone2Alu, matricula);
-    AlunoDAO alunoDAO = new AlunoDAO();   
-    alunoDAO.salvar(aluno);
+   AlunoControl aluno = new AlunoControl();
+   aluno.salvar(nomeAlu, sobrenomeAlu, cpfAlu, rgAlu, sexoAlu, cargo, dataNascAlu, emailAlu, telefone1Alu, telefone2Alu);
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void buscarBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBTNActionPerformed
@@ -501,10 +488,6 @@ public class CadAluno extends javax.swing.JInternalFrame {
         jFundoBT.setVisible(false);
     }//GEN-LAST:event_BTNLimparActionPerformed
 
-    private void campoMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoMatriculaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoMatriculaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTNLimpar;
@@ -515,12 +498,12 @@ public class CadAluno extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField campoCpf;
     private javax.swing.JFormattedTextField campoData;
     private javax.swing.JTextField campoEmail;
-    private javax.swing.JFormattedTextField campoMatricula;
     private javax.swing.JTextField campoNome;
     private javax.swing.JTextField campoRg;
     private javax.swing.JTextField campoSobrenome;
     private javax.swing.JFormattedTextField campoTelefone1;
     private javax.swing.JFormattedTextField campoTelefone2;
+    private javax.swing.JComboBox<String> cargoCombo;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JPanel jFundoBT;

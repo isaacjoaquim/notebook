@@ -16,25 +16,26 @@ public class Aluno {
     private String dataNascAlu;
     private String cpfAlu;
     private String rgAlu;
+    private String cargo;
     private String sexoAlu;
     private String emailAlu;
     private String telefone1Alu;
     private String telefone2Alu;
-    private String matricula;
 
-    public Aluno(String nomeAlu, String sobrenomeAlu, String dataNascAlu, String cpfAlu, String rgAlu, String sexoAlu, String emailAlu, String telefone1Alu, String telefone2Alu, String matricula) {
+    public Aluno(String nomeAlu, String sobrenomeAlu, String dataNascAlu, String cpfAlu, String rgAlu, String cargo, String sexoAlu, String emailAlu, String telefone1Alu, String telefone2Alu) {
         this.nomeAlu = nomeAlu;
         this.sobrenomeAlu = sobrenomeAlu;
         this.dataNascAlu = dataNascAlu;
         this.cpfAlu = cpfAlu;
         this.rgAlu = rgAlu;
+        this.cargo = cargo;
         this.sexoAlu = sexoAlu;
         this.emailAlu = emailAlu;
         this.telefone1Alu = telefone1Alu;
         this.telefone2Alu = telefone2Alu;
-        this.matricula = matricula;
     }
 
+   
     
     
     public int getIdAlu() {
@@ -117,12 +118,12 @@ public class Aluno {
         this.telefone2Alu = telefone2Alu;
     }
 
-    public String getMatricula() {
-        return matricula;
+    public String getCargo() {
+        return cargo;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
     
     

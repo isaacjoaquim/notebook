@@ -32,7 +32,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCadastros = new javax.swing.JMenu();
         menuPessoas = new javax.swing.JMenu();
-        menuCadPessoas = new javax.swing.JMenuItem();
         menuConsultPessoas = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         menuReservas = new javax.swing.JMenu();
@@ -77,18 +76,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menuPessoas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bootloader_users_person_people_6080.png"))); // NOI18N
         menuPessoas.setText("funcionarios / alunos");
 
-        menuCadPessoas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/customer_person_people_man_user_client_1629.png"))); // NOI18N
-        menuCadPessoas.setText("Funcionarios");
-        menuCadPessoas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuCadPessoas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuCadPessoasActionPerformed(evt);
-            }
-        });
-        menuPessoas.add(menuCadPessoas);
-
         menuConsultPessoas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/business_man_usersearch_thesearch_theclient_2356.png"))); // NOI18N
-        menuConsultPessoas.setText("Aluno");
+        menuConsultPessoas.setText("Cadastro");
         menuConsultPessoas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuConsultPessoas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,12 +166,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formMouseClicked
 
-    private void menuCadPessoasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadPessoasActionPerformed
-        CadHumano cadH = new CadHumano();
-        fundoTela.add(cadH);
-        cadH.setVisible(true);
-    }//GEN-LAST:event_menuCadPessoasActionPerformed
-
     private void menuConsultPessoasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConsultPessoasActionPerformed
         CadAluno cadA = new CadAluno();
         fundoTela.add(cadA);
@@ -258,7 +241,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JMenuItem menuCadPessoas;
     private javax.swing.JMenu menuCadastros;
     private javax.swing.JMenuItem menuConsultPessoas;
     private javax.swing.JMenuItem menuConsultReserva;
